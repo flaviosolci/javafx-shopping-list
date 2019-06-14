@@ -34,7 +34,7 @@
    <center>
       <TitledPane alignment="CENTER" collapsible="false" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="danger" text="Shopping List" BorderPane.alignment="CENTER">
          <content>
-            <ListView fx:id="shopList" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
+            <ListView fx:id="shopList" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onMouseClicked="#removeSelectItem" />
          </content>
          <font>
             <Font size="18.0" />

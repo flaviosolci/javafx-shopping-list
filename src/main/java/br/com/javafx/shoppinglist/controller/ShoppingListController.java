@@ -14,6 +14,7 @@ import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javafx.scene.input.MouseEvent;
 
 public class ShoppingListController {
 
@@ -49,7 +50,7 @@ public class ShoppingListController {
 
 	@FXML
 	void addItem(final ActionEvent event) {
-
+		System.out.println("Adding item");
 		final TextInputDialog dialog = new TextInputDialog();
 		final Stage dialogStage = (Stage) dialog.getDialogPane().getScene().getWindow();
 		dialogStage.getIcons().add(new Image((getClass().getResource("/img/javafx.png").toExternalForm())));
@@ -67,8 +68,19 @@ public class ShoppingListController {
 
 	@FXML
 	void quit(final ActionEvent event) {
+		System.out.println("Exiting");
 		Platform.exit();
 		System.exit(0);
 	}
+
+	@FXML
+    void removeSelectItem(MouseEvent event) {
+		if (event.getClickCount() == 2) {
+			System.out.println("Removing Item");
+			String currentItemSelected = shopList.getSelectionModel().getSelectedItem();
+			shopList.getItems().remove(currentItemSelected);
+			
+		 }
+    }
 
 }
